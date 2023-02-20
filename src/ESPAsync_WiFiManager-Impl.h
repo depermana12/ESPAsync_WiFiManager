@@ -1032,15 +1032,8 @@ int ESPAsync_WiFiManager::reconnectWifi()
   {
     LOGERROR1(F("Failed to connect to"), _ssid);
 
-    if ( ( connectResult = connectWifi(_ssid1, _pass1) ) != WL_CONNECTED)
-    {
-      LOGERROR1(F("Failed to connect to"), _ssid1);
-    }
-    else
-    {
-      LOGERROR1(F("Connected to"), _ssid1);
-    }
   }
+  
   else
   {
     LOGERROR1(F("Connected to"), _ssid);
@@ -1528,13 +1521,13 @@ void ESPAsync_WiFiManager::handleWifi(AsyncWebServerRequest *request)
   }
   else
   {
-    page += FPSTR(WM_FLDSET_START);
+   // page += FPSTR(WM_FLDSET_START);
 
     //display networks in page
     String pager = networkListAsString();
 
     page += pager;
-    page += FPSTR(WM_FLDSET_END);
+  //  page += FPSTR(WM_FLDSET_END);
     page += "<br/>";
   }
 
@@ -1550,8 +1543,6 @@ void ESPAsync_WiFiManager::handleWifi(AsyncWebServerRequest *request)
   // Populate SSIDs and PWDs if valid
   page.replace("[[ssid]]",  _ssid );
   page.replace("[[pwd]]",   _pass );
-  page.replace("[[ssid1]]", _ssid1 );
-  page.replace("[[pwd1]]",  _pass1 );
 #endif
 
   char parLength[2];
@@ -1628,7 +1619,8 @@ void ESPAsync_WiFiManager::handleWifi(AsyncWebServerRequest *request)
   if (_WiFi_STA_IPconfig._sta_static_ip)
 #endif
   {
-    page += FPSTR(WM_FLDSET_START);
+    //page += FPSTR(WM_FLDSET_START);
+	
 
     String item = FPSTR(WM_HTTP_FORM_LABEL);
 
@@ -1689,7 +1681,7 @@ void ESPAsync_WiFiManager::handleWifi(AsyncWebServerRequest *request)
 #endif
 
     page += item;
-    page += FPSTR(WM_FLDSET_END);
+    //page += FPSTR(WM_FLDSET_END);
     page += "<br/>";
   }
 
@@ -1733,8 +1725,6 @@ void ESPAsync_WiFiManager::handleWifiSave(AsyncWebServerRequest *request)
   _ssid = request->arg("s").c_str();
   _pass = request->arg("p").c_str();
 
-  _ssid1 = request->arg("s1").c_str();
-  _pass1 = request->arg("p1").c_str();
 
   ///////////////////////
 
@@ -1834,7 +1824,6 @@ void ESPAsync_WiFiManager::handleWifiSave(AsyncWebServerRequest *request)
 
   page.replace("{v}", _apName);
   page.replace("{x}", _ssid);
-  page.replace("{x1}", _ssid1);
   //////
 
   page += FPSTR(WM_HTTP_END);
@@ -2036,9 +2025,7 @@ void ESPAsync_WiFiManager::handleInfo(AsyncWebServerRequest *request)
   page += FPSTR(WM_HTTP_AVAILABLE_PAGES);
   page += FPSTR(WM_FLDSET_END);
 #endif
-
-  page += F("<p/>More information about ESPAsync_WiFiManager at");
-  page += F("<p/><a href=\"https://github.com/khoih-prog/ESPAsync_WiFiManager\">https://github.com/khoih-prog/ESPAsync_WiFiManager</a>");
+  page += F("<p/><a href=\"https://github.com/khoih-prog/ESPAsync_WiFiManager\">About ESPAsync WifiManager</a>");
   page += FPSTR(WM_HTTP_END);
 
 #if ( USING_ESP32_S2 || USING_ESP32_C3 )
