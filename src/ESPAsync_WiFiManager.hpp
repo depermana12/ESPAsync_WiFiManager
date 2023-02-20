@@ -328,12 +328,11 @@ const char WM_HTTP_HEAD_START[] PROGMEM     = "<!DOCTYPE html><html lang='en'><h
 
 ////////////////////////////////////////////////////
 
-const char WM_HTTP_STYLE[] PROGMEM = "<style>div{padding:2px;font-size:1em;}body,textarea,input,select{background: 0;border-radius: 0;font: 16px sans-serif;margin: 0}textarea,input,select{outline: 0;font-size: 14px;border: 1px solid #ccc;padding: 8px;width: 90%}.btn a{text-decoration: none}.container{margin: auto;width: 90%}@media(min-width:1200px){.container{margin: auto;width: 30%}}@media(min-width:768px) and (max-width:1200px){.container{margin: auto;width: 50%}}.btn,h2{font-size: 2em}h1{font-size: 3em}.btn{background: #0ae;border-radius: 4px;border: 0;color: #fff;cursor: pointer;display: inline-block;margin: 2px 0;padding: 10px 14px 11px;width: 100%}.btn:hover{background: #09d}.btn:active,.btn:focus{background: #08b}label>*{display: inline}form>*{display: block;margin-bottom: 10px}textarea:focus,input:focus,select:focus{border-color: #5ab}.msg{background: #def;border-left: 5px solid #59d;padding: 1.5em}.q{float: right;width: 64px;text-align: right}.l{background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAALVBMVEX///8EBwfBwsLw8PAzNjaCg4NTVVUjJiZDRUUUFxdiZGSho6OSk5Pg4eFydHTCjaf3AAAAZElEQVQ4je2NSw7AIAhEBamKn97/uMXEGBvozkWb9C2Zx4xzWykBhFAeYp9gkLyZE0zIMno9n4g19hmdY39scwqVkOXaxph0ZCXQcqxSpgQpONa59wkRDOL93eAXvimwlbPbwwVAegLS1HGfZAAAAABJRU5ErkJggg==') no-repeat left center;background-size: 1em}input[type='checkbox']{float: left;width: 20px}.table td{padding:.5em;text-align:left}.table tbody>:nth-child(2n-1){background:#ddd}fieldset{border-radius:0.5rem;margin:0px;}</style>";
+const char WM_HTTP_STYLE[] PROGMEM = "<style>div{padding:2px;font-size:1em;}body,textarea,input,select{background: 0;border-radius: 0;font: 15px sans-serif;margin: 0;}textarea,input,select{outline: 0;background: #f2f2f2;width: 100%;border: 0;margin: 0 0 15px;padding: 15px;box-sizing: border-box;font-size: 13px;}.btn a{text-decoration: none;}.container{margin: auto;width: 90%;}@media(min-width:1200px){.container{margin: auto;width: 30%}}@media(min-width:768px) and (max-width:1200px){.container{margin: auto;width: 50%}}.btn,h2{font-size: 1.1em;}h1{font-size: 3em;}.btn{background: #0ae;border: 0;border-radius: 6px;box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;box-sizing: border-box;color: #fff;cursor: pointer;display: inline-flex;justify-content: center;line-height: 1;list-style: none;overflow: hidden;padding: 20px 16px;position: relative;text-align: left;text-decoration: none;transition: box-shadow .15s,transform .15s;user-select: none;-webkit-user-select: none;touch-action: manipulation;white-space: nowrap;will-change: box-shadow,transform;width: 100%;}.btn:hover{background: #09d;}.btn:active{box-shadow:#08b 0 3px 7px inset;transform: translateY(2px);}.btn:focus{box-shadow: #08b 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #08b 0 -3px 0 inset;}label{vertical-align: middle;}form>*{display: block;z-index: 1;background: #FFFFFF;margin: 0 auto;padding: 45px;}textarea:focus,input:focus,select:focus{border-color: #5ab;}.msg{background: #def;border-left: 5px solid #59d;padding: 1.5em;}.q{float: right;width: 64px;text-align: right;}.l{background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAALVBMVEX///8EBwfBwsLw8PAzNjaCg4NTVVUjJiZDRUUUFxdiZGSho6OSk5Pg4eFydHTCjaf3AAAAZElEQVQ4je2NSw7AIAhEBamKn97/uMXEGBvozkWb9C2Zx4xzWykBhFAeYp9gkLyZE0zIMno9n4g19hmdY39scwqVkOXaxph0ZCXQcqxSpgQpONa59wkRDOL93eAXvimwlbPbwwVAegLS1HGfZAAAAABJRU5ErkJggg==') no-repeat left center;background-size: 1em;}input[type='checkbox']{float: left;width: 20px;}input[type=password],input[type=text]{outline: 0;background: #f2f2f2;width: 100%;border: 0;margin: 0 0 15px;padding: 15px;box-sizing: border-box;font-size: 13px;}.table {border-collapse: collapse;overflow: hidden;border:1px solid #ddd;}.table td{padding:.6em;text-align:left;}th,td {padding: 15px;}th {text-align: left;background-color: #6c7ae0;color: white;}tr:nth-child(even) {background-color: #f8f6ff;}fieldset{border:0;border-radius:6px;margin-bottom:20px;box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);}</style>";
 
 ////////////////////////////////////////////////////
 
-const char WM_HTTP_SCRIPT[] PROGMEM = "<script>function c(l){document.getElementById('s').value=l.innerText||l.textContent;document.getElementById('p').focus();document.getElementById('s1').value=l.innerText||l.textContent;document.getElementById('p1').focus();document.getElementById('timezone').value=timezone.name();}</script>";
-
+const char WM_HTTP_SCRIPT[] PROGMEM = "<script>function c(l){document.getElementById('s').value=l.innerText||l.textContent;document.getElementById('p').focus();document.getElementById('timezone').value=timezone.name();}</script>";
 ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
 
@@ -395,7 +394,7 @@ const char WM_FLDSET_END[]    PROGMEM = "</fieldset>";
 
 ////////////////////////////////////////////////////
 
-const char WM_HTTP_PORTAL_OPTIONS[] PROGMEM = "<form action='/wifi' method='get'><button class='btn'>Configuration</button></form><br/><form action='/i' method='get'><button class='btn'>Information</button></form><br/><form action='/close' method='get'><button class='btn'>Exit Portal</button></form><br/>";
+const char WM_HTTP_PORTAL_OPTIONS[] PROGMEM = "<form action='/wifi' method='get'><button class='btn'>CONFIGURE Wi-Fi</button></form><br/><form action='/i' method='get'><button class='btn'>DEVICE INFORMATION</button></form><br/><form action='/close' method='get'><button class='btn'>EXIT PORTAL</button></form><br/>";
 const char WM_HTTP_ITEM[] PROGMEM = "<div><a href='#p' onclick='c(this)'>{v}</a>&nbsp;<span class='q {i}'>{r}%</span></div>";
 const char JSON_ITEM[] PROGMEM    = "{\"SSID\":\"{v}\", \"Encryption\":{i}, \"Quality\":\"{r}\"}";
 
@@ -412,9 +411,9 @@ const char JSON_ITEM[] PROGMEM    = "{\"SSID\":\"{v}\", \"Encryption\":{i}, \"Qu
 #endif
 
 #if DISPLAY_STORED_CREDENTIALS_IN_CP
-const char WM_HTTP_FORM_START[] PROGMEM = "<form method='get' action='wifisave'><fieldset><div><label>SSID</label><input value='[[ssid]]' id='s' name='s' length=32 placeholder='SSID'><div></div></div><div><label>Password</label><input value='[[pwd]]' id='p' name='p' length=64 placeholder='password'><div></div></div><div><label>SSID1</label><input value='[[ssid1]]' id='s1' name='s1' length=32 placeholder='SSID1'><div></div></div><div><label>Password</label><input value='[[pwd1]]' id='p1' name='p1' length=64 placeholder='password1'><div></div></div></fieldset>";
+const char WM_HTTP_FORM_START[] PROGMEM = "<form method='get' action='wifisave'><fieldset><div><label>SSID</label><input value='[[ssid]]' id='s' name='s' length=32 placeholder='SSID'><div></div></div><div><label>Password</label><input value='[[pwd]]' id='p' name='p' length=64 placeholder='password'><div></div></div></fieldset>";
 #else
-const char WM_HTTP_FORM_START[] PROGMEM = "<form method='get' action='wifisave'><fieldset><div><label>SSID</label><input id='s' name='s' length=32 placeholder='SSID'><div></div></div><div><label>Password</label><input id='p' name='p' length=64 placeholder='password'><div></div></div><div><label>SSID1</label><input id='s1' name='s1' length=32 placeholder='SSID1'><div></div></div><div><label>Password</label><input id='p1' name='p1' length=64 placeholder='password1'><div></div></div></fieldset>";
+const char WM_HTTP_FORM_START[] PROGMEM = "<form method='get' action='wifisave'><fieldset><div><label>SSID</label><input id='s' name='s' length=32 placeholder='Select network name'></div><div><label>Password</label><input type='password' id='p' name='p' length=64 placeholder='Enter password'><input type='checkbox' id='showPassword'><label>Show password</label></div><script>document.getElementById('showPassword').onclick = function() {if ( this.checked ) {document.getElementById('p').type = 'text';} else {document.getElementById('p').type = 'password';}};</script></fieldset>";
 #endif
 
 ////////////////////////////////////////////////////
@@ -431,7 +430,7 @@ const char WM_HTTP_FORM_END[] PROGMEM = "<button class='btn' type='submit'>Save<
 
 ////////////////////////////////////////////////////
 
-const char WM_HTTP_SAVED[] PROGMEM = "<div class='msg'><b>Credentials Saved</b><br>Try connecting ESP to the {x}/{x1} network. Wait around 10 seconds then check <a href='/'>if it's OK.</a> <p/>The {v} AP will run on the same WiFi channel of the {x}/{x1} AP. You may have to manually reconnect to the {v} AP.</div>";
+const char WM_HTTP_SAVED[] PROGMEM = "<div class='msg'><b>Credentials Saved</b><br><br>Please wait...<br>Connecting <b>Smart garden controller</b> to the {x} network </div>";
 
 ////////////////////////////////////////////////////
 
@@ -650,22 +649,20 @@ class ESPAsync_WiFiManager
 ////////////////////////////////////////////////////
 
     // KH add to display SSIDs and PWDs in CP   
-    void				  setCredentials(const char* ssid, const char* pwd, const char* ssid1, const char* pwd1)
+    void				  setCredentials(const char* ssid, const char* pwd)
     {
       _ssid   = String(ssid);
       _pass   = String(pwd);
-      _ssid1  = String(ssid1);
-      _pass1  = String(pwd1);
+    
     }
 
     ////////////////////////////////////////////////////
     
-    inline void	  setCredentials(String & ssid, String & pwd, String & ssid1, String & pwd1)
+    inline void	  setCredentials(String & ssid, String & pwd)
     {
       _ssid   = ssid;
       _pass   = pwd;
-      _ssid1  = ssid1;
-      _pass1  = pwd1;
+     
     }
 
 ////////////////////////////////////////////////////
@@ -686,19 +683,6 @@ class ESPAsync_WiFiManager
 
     ////////////////////////////////////////////////////
     
-    // return SSID of router in STA mode got from config portal. NULL if no user's input //KH
-    inline String	getSSID1() 
-    {
-      return _ssid1;
-    }
-
-    ////////////////////////////////////////////////////
-
-    // return password of router in STA mode got from config portal. NULL if no user's input //KH
-    inline String	getPW1() 
-    {
-      return _pass1;
-    }
 
     ///////////////////////////
      
@@ -710,8 +694,6 @@ class ESPAsync_WiFiManager
     {
       if (index == 0)
         return _ssid;
-      else if (index == 1)
-        return _ssid1;
       else     
         return String("");
     }
@@ -722,8 +704,6 @@ class ESPAsync_WiFiManager
     {
       if (index == 0)
         return _pass;
-      else if (index == 1)
-        return _pass1;
       else     
         return String("");
     }
@@ -896,8 +876,7 @@ class ESPAsync_WiFiManager
     String        _ssid                 = "";
     String        _pass                 = "";
     
-    String        _ssid1                = "";
-    String        _pass1                = "";
+   
 
     ////////////////////////////////////////////////////
 
